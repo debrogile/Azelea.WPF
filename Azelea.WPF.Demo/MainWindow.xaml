@@ -1,0 +1,21 @@
+﻿<ac:BaseWindow x:Class="Azelea.WPF.Demo.MainWindow"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:fa="http://schemas.fontawesome.io/icons/"
+               xmlns:ac="clr-namespace:Azelea.WPF.Controls;assembly=Azelea.WPF.Controls">
+    <ac:BaseWindow.Resources>
+
+    </ac:BaseWindow.Resources>
+    <ac:BaseWindow.Header>
+        <Grid Height="60"/>
+    </ac:BaseWindow.Header>
+    <ac:BaseWindow.Tools>
+        <Grid>
+            <Button fa:Awesome.Content="User"/>
+        </Grid>
+    </ac:BaseWindow.Tools>
+    <Grid>
+        <fa:FontAwesome Icon="AddUser" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="dsfasdfsa" Foreground="Red"/>
+    </Grid>
+</ac:BaseWindow>
