@@ -7,14 +7,20 @@
     <SolidColorBrush x:Key="Warning" Color="#F0AD4E"/>
     <SolidColorBrush x:Key="Danger" Color="#F44027"/>
 
+    <!-- Border -->
+    <SolidColorBrush x:Key="DefaultBorder" Color="#ADADAD"/>
+    <SolidColorBrush x:Key="HoverBorder" Color="#0078D7"/>
+    <SolidColorBrush x:Key="ActiveBorder" Color="#005499"/>
+    <SolidColorBrush x:Key="DisableBorder" Color="#DFDFDF"/>
+
     <!-- Background -->
-    <SolidColorBrush x:Key="DefaultBackground" Color="#EEEEEE"/>
+    <SolidColorBrush x:Key="DefaultBackground" Color="#E1E1E1"/>
+    <SolidColorBrush x:Key="HoverBackground" Color="#E5F1FB"/>
+    <SolidColorBrush x:Key="ActiveBackground" Color="#CCE4F7"/>
+    <SolidColorBrush x:Key="DisableBackground" Color="#CCCCCC"/>
     
     <!-- Foreground -->
-    <SolidColorBrush x:Key="DefaultForeground" Color="#1E1E1E"/>
-
-    <!-- Border -->
-    <SolidColorBrush x:Key="DefaultBorder" Color="#CCCCCC"/>
-    <SolidColorBrush x:Key="ActiveBorder" Color="#007ACC"/>
+    <SolidColorBrush x:Key="DefaultForeground" Color="Black"/>
+    <SolidColorBrush x:Key="InverseForeground" Color="White"/>
     
 </ResourceDictionary>

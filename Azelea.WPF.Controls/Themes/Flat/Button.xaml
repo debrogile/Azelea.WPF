@@ -7,31 +7,46 @@
 
     <!-- 默认按钮样式 -->
     <Style TargetType="{x:Type Button}">
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Background" Value="{StaticResource DefaultBackground}"/>
+        <Setter Property="Foreground" Value="{StaticResource DefaultForeground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DefaultBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="10,3"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}"
+                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}"
                             SnapsToDevicePixels="True">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource HoverBorder}"/>
+                <Setter Property="Background" Value="{StaticResource HoverBackground}"/>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource ActiveBorder}"/>
+                <Setter Property="Background" Value="{StaticResource ActiveBackground}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Opacity" Value="0.6"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
-    
+
     <!-- 基于 FontAwesome 的图标按钮 -->
     <Style x:Key="IconButton" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
-        <Setter Property="Opacity" Value="0.9"/>
+        <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="TextElement.FontFamily" 
                 Value="pack://application:,,,/FontAwesome.WPF;component/#FontAwesome"/>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Background" Value="{StaticResource Primary}"/>
                 <Setter Property="Foreground" Value="White"/>
-            </Trigger>
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Opacity" Value="1"/>
             </Trigger>
         </Style.Triggers>
     </Style>

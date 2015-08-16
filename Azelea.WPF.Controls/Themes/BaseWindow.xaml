@@ -9,13 +9,12 @@
     <Style TargetType="{x:Type local:BaseWindow}">
         <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="WindowStyle" Value="None"/>
-        <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="{StaticResource DefaultBorder}"/>
         <Setter Property="Background" Value="{StaticResource DefaultBackground}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:BaseWindow}">
-                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1"
                             Background="{TemplateBinding Background}">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -26,7 +25,7 @@
                             <AdornerDecorator Grid.Row="1">
                                 <ContentPresenter/>
                             </AdornerDecorator>
-                            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal">
+                            <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" Margin="0,-1,-1,0" Background="Transparent">
                                 <StackPanel.Resources>
                                     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButton}">
                                         <Setter Property="Width" Value="26"/>

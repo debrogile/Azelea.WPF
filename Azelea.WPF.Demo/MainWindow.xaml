@@ -15,7 +15,7 @@
         </Grid>
     </ac:BaseWindow.Tools>
     <Grid>
-        <fa:FontAwesome Icon="AddUser" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Content="dsfasdfsa" Foreground="Red"/>
+        <!--<fa:FontAwesome Icon="AddUser" HorizontalAlignment="Left" VerticalAlignment="Center"/>-->
+        <Button HorizontalAlignment="Left" VerticalAlignment="Center" Content="dfadfasf" IsEnabled="False"/>
     </Grid>
 </ac:BaseWindow>
