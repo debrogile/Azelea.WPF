@@ -3,5 +3,6 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Azelea.WPF.Controls;component/Themes/Flat/Common.xaml"/>
         <ResourceDictionary Source="/Azelea.WPF.Controls;component/Themes/Flat/Button.xaml"/>
+        <ResourceDictionary Source="/Azelea.WPF.Controls;component/Themes/Flat/ScrollViewer.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

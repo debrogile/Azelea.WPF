@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azelea.WPF.Demo", "Azelea.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azelea.WPF.Controls", "Azelea.WPF.Controls\Azelea.WPF.Controls.csproj", "{7E8C833A-D2C9-469F-AF74-8C1AB9D460E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ATrade", "ATrade\ATrade.csproj", "{4753A532-2526-4B3F-B099-F2D14C0AF400}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azelea.Foundation", "Azelea.Foundation\Azelea.Foundation.csproj", "{99F836BC-D4B9-49EF-969B-1D691E83CB29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{7E8C833A-D2C9-469F-AF74-8C1AB9D460E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E8C833A-D2C9-469F-AF74-8C1AB9D460E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E8C833A-D2C9-469F-AF74-8C1AB9D460E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4753A532-2526-4B3F-B099-F2D14C0AF400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4753A532-2526-4B3F-B099-F2D14C0AF400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4753A532-2526-4B3F-B099-F2D14C0AF400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4753A532-2526-4B3F-B099-F2D14C0AF400}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F836BC-D4B9-49EF-969B-1D691E83CB29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F836BC-D4B9-49EF-969B-1D691E83CB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F836BC-D4B9-49EF-969B-1D691E83CB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F836BC-D4B9-49EF-969B-1D691E83CB29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

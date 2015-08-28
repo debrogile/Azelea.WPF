@@ -19,14 +19,16 @@
                 <ControlTemplate TargetType="{x:Type local:BaseWindow}">
                     <Border BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
                         <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <ContentPresenter Grid.Row="0" x:Name="PART_Header" Content="{TemplateBinding Header}"/>
-                            <AdornerDecorator Grid.Row="1">
-                                <ContentPresenter/>
-                            </AdornerDecorator>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <ContentPresenter Grid.Row="0" x:Name="PART_Header" Content="{TemplateBinding Header}"/>
+                                <AdornerDecorator Grid.Row="1">
+                                    <ContentPresenter/>
+                                </AdornerDecorator>
+                            </Grid>
                             <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Orientation="Horizontal" 
                                         Margin="0,-1,-1,0" Background="Transparent">
                                 <StackPanel.Resources>
@@ -56,13 +58,6 @@
                                         <Style TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
                                             <Setter Property="fa:Awesome.Content" Value="Expand"/>
                                             <Setter Property="ToolTip" Value="最大化"/>
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=WindowState}" 
-                                                             Value="Maximized">
-                                                    <Setter Property="fa:Awesome.Content" Value="Compress"/>
-                                                    <Setter Property="ToolTip" Value="还原"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
                                         </Style>
                                     </Button.Style>
                                 </Button>
@@ -78,17 +73,7 @@
                                     </Button.Style>
                                 </Button>
                             </StackPanel>
-                            <Grid Grid.RowSpan="2">
-                                <Grid.Style>
-                                    <Style TargetType="{x:Type Grid}">
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=WindowState}" 
-                                                         Value="Maximized">
-                                                <Setter Property="Visibility" Value="Collapsed"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </Grid.Style>
+                            <Grid x:Name="Resizer">
                                 <Rectangle x:Name="PART_SizeLeft" HorizontalAlignment="Left" VerticalAlignment="Stretch" Fill="Transparent" Cursor="SizeWE"
                                            Width="{StaticResource ResizerSize}"/>
                                 <Rectangle x:Name="PART_SizeRight" HorizontalAlignment="Right" VerticalAlignment="Stretch" Fill="Transparent" Cursor="SizeWE"
@@ -108,6 +93,17 @@
                             </Grid>
                         </Grid>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="CanResize" Value="False">
+                            <Setter TargetName="Resizer" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="PART_Restore" Property="Visibility" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="WindowState" Value="Maximized">
+                            <Setter TargetName="Resizer" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="PART_Restore" Property="fa:Awesome.Content" Value="Compress"/>
+                            <Setter TargetName="PART_Restore" Property="ToolTip" Value="还原"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

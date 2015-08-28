@@ -1,0 +1,76 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fa="http://schemas.fontawesome.io/icons/"
+                    xmlns:local="clr-namespace:Azelea.WPF.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Flat/Button.xaml"/>
+        <ResourceDictionary Source="Flat/ScrollViewer.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type local:MessageBoxWindow}">
+        <Setter Property="BorderBrush" Value="#A0A0A0"/>
+        <Setter Property="Background" Value="#EEEEEE"/>
+        <Setter Property="ResizeMode"  Value="NoResize"/>
+        <Setter Property="ShowInTaskbar" Value="False"/>
+        <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+        <Setter Property="MinWidth" Value="300"/>
+        <Setter Property="MinHeight" Value="120"/>
+        <Setter Property="MaxWidth" Value="600"/>
+        <Setter Property="MaxHeight" Value="400"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:MessageBoxWindow}">
+                    <Border BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
+                        <Grid>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" TextTrimming="CharacterEllipsis" Margin="5" Padding="5,2"
+                                           Text="{TemplateBinding Title}"/>
+                                <ScrollViewer Grid.Row="1" Margin="8,0" VerticalScrollBarVisibility="Auto" 
+                                              Style="{StaticResource ScrollViewer}">
+                                    <TextBlock TextWrapping="WrapWithOverflow" Padding="10,3" Text="{TemplateBinding Message}"/>
+                                </ScrollViewer>
+                                <ItemsControl Grid.Row="2" Padding="4" HorizontalAlignment="Right" 
+                                              ItemsSource="{TemplateBinding Buttons}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <UniformGrid Rows="1"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Button Margin="4" Content="{Binding Text}" IsDefault="{Binding Result}" Command="{Binding Command}" 
+                                                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType={x:Type Window}}}"/>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Grid>
+                            <Button x:Name="PART_Close" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-1,-1,0"
+                                    fa:Awesome.Content="Close" ToolTip="关闭" IsCancel="True">
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource IconButton}">
+                                        <Setter Property="Width" Value="22"/>
+                                        <Setter Property="Height" Value="22"/>
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Setter Property="Foreground" Value="{StaticResource Default}"/>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="{StaticResource Danger}"/>
+                                                <Setter Property="Foreground" Value="{StaticResource Inverse}"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>
